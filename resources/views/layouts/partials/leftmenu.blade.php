@@ -3,8 +3,20 @@
   @auth
   <ul class="sidebar-menu" data-widget="tree">
     <li class="header">Menu</li>
-    <li><a href="#"><i class="fa fa-link"></i> <span>Enlace</span></a></li>
-    <li><a href="#"><i class="fa fa-link"></i> <span>Otro Enlace</span></a></li>
+    <li class="treeview {{ active_check(['user','login']) }}">
+      <a href="#"><i class="fa fa-list"></i> <span>Categorias</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu">
+        <li class="{{ active_check(['categorias']) }}"><a href="{{ url('categorias') }}"><i class="fa fa-sort-alpha-desc"></i> Listado</a></li>
+        <li class="{{ active_check(['categorias/create']) }}"><a href="{{ url('categorias/create') }}"><i class="fa fa-plus-square"></i> Agregar</a></li>
+      </ul>
+    </li>
+
+    <li><a href="/productos"><i class="fa fa-undo"></i> <span>Productos</span></a></li>
+    <li><a href="#"><i class="fa fa-usd"></i> <span>Ventas</span></a></li>
     @can('view_users')
     <li class="treeview {{ active_check(['user','login']) }}">
       <a href="#"><i class="fa fa-user"></i> <span>Usuarios</span>

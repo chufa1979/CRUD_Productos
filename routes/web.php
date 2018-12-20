@@ -22,9 +22,12 @@ Route::middleware(['auth',])->group(function () {
 
   Route::get('/', 'HomeController@index')->name('home');
   Route::get('user-autocomplete', 'UserController@autocomplete');
+  Route::get('categorias-autocomplete', 'CategoriaController@autocomplete');
 
   Route::resource('user', 'UserController');
   Route::resource('logins', 'LoginController');
   Route::resource('permission', 'PermissionController');
+
+  Route::resource('categorias', 'CategoriaController');
 
 });

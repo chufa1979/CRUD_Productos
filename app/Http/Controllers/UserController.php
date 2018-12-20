@@ -25,7 +25,7 @@ class UserController extends Controller
         $users = User::with('roles')->with('permissions')
                        ->search($request->q)
                        ->orderBy('created_at', 'desc')
-                       ->paginate(10);
+                       ->paginate(1);
 
         return view('admin.user.index', ['users' => $users]);
     }
