@@ -59,9 +59,9 @@
                         <i class="fa fa-gears"></i> <span class="caret"></span>
                       </button>
                       <ul class=" dropdown-menu dropdown-menu-right">
-                        <li><a href="{{ url('categorias', [$categoria->id, 'edit']) }}"><i class="fa fa-edit"></i> Editar</a></a></li>
+                        <li><a href="{{ url('categorias', [$categoria->encode_id, 'edit']) }}"><i class="fa fa-edit"></i> Editar</a></a></li>
                         <li class="divider"><li>
-                        <li><a href="#confirm-modal" id="{{ $categoria->id }}"  class="del-btn" data-toggle="modal"><i class="fa fa-trash"></i> Eliminar</a></li>
+                        <li><a href="#confirm-modal" id="{{ $categoria->encode_id }}"  class="del-btn" data-toggle="modal"><i class="fa fa-trash"></i> Eliminar</a></li>
                       </ul>
                     </div>
                   </td>

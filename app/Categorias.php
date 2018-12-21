@@ -2,15 +2,17 @@
 
 namespace App;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes; 
 
-
 class Categorias extends Model
 {
+    use Notifiable;
     use SoftDeletes;
     use SearchableTrait;
+
 
     protected $table = 'categorias';
 
@@ -24,4 +26,8 @@ class Categorias extends Model
         ]
     ];    
 
+    public function getEncodeIDAttribute()
+    {
+        return \Hashids::encode($this->id);
+    }
 }

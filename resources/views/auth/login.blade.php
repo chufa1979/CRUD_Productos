@@ -6,7 +6,7 @@
 
     <div class="login-box">
       <div class="login-logo">
-        <a href="{{ url('/') }}"><b>Lar</b>admin</a>
+        <a href="{{ url('/') }}"><b>Baufest</b> Admin</a>
       </div>
       <div class="login-box-body">
         <p class="login-box-msg">Ingreso al sistema</p>

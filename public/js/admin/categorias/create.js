@@ -33,7 +33,6 @@ $(document).ready(function(){
               },error: function (data) {
                 var errors = data.responseJSON;
                 $.each( errors.errors, function( key, value ) {
-                    console.log(value);
                   toastr.error(value);
                   return false;
                 });

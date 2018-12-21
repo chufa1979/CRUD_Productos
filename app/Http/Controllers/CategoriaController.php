@@ -43,7 +43,7 @@ class CategoriaController extends Controller
             $categorias->assignRole($request->role);
         }
 
-        return json_encode(['success' => true, 'categorias_id' => $categorias->encode_id]);
+        return json_encode(['success' => true, 'categorias_id' => $categorias->id]);
     }
 
     public function create()
@@ -53,7 +53,7 @@ class CategoriaController extends Controller
 
     public function destroy($id)
     {
-        $categorias = Categorias::find($id)->delete();
+        $categorias = Categorias::find(\Hashids::decode($id)[0])->delete();
 
         return json_encode(['success' => true]);
     }    
@@ -65,7 +65,7 @@ class CategoriaController extends Controller
 
     public function edit($id)
     {
-        $categorias = Categorias::find(($id));
+        $categorias = Categorias::find(\Hashids::decode($id)[0]);
 
         return view('admin.categorias.edit', ['categorias' => $categorias]);
     }
@@ -80,7 +80,7 @@ class CategoriaController extends Controller
 
     public function update(UpdateCategorias $request, $id)
     {
-        $categorias = Categorias::find($id);
+        $categorias = Categorias::find(\Hashids::decode($id)[0]);
         $categorias->update($request->except('role'));
 
         if ($request->has('role'))

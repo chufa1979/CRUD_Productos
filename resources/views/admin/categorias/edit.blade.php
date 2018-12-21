@@ -27,7 +27,7 @@
       <div class="col-md-12">
         <div class="box box-primary">
           <form role="form" id="main-form">
-            <input type="hidden" id="_url" value="{{ url('categorias', [$categorias->id]) }}">
+            <input type="hidden" id="_url" value="{{ url('categorias', [$categorias->encode_id]) }}">
             <input type="hidden" id="_token" value="{{ csrf_token() }}">
             <div class="box-body">
               <div class="form-group pading">
