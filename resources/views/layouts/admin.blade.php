@@ -16,7 +16,7 @@
       <header class="main-header">
         <a href="{{ url('/') }}" class="logo">
           <span class="logo-mini"><b>L</b>A</span>
-          <span class="logo-lg"><b>Lar</b>admin</span>
+          <span class="logo-lg"><b>Baufest</b>admin</span>
         </a>
         <!-- Header Navbar -->
         <nav class="navbar navbar-static-top" role="navigation">

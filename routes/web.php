@@ -29,5 +29,5 @@ Route::middleware(['auth',])->group(function () {
   Route::resource('permission', 'PermissionController');
 
   Route::resource('categorias', 'CategoriaController');
-
+  Route::resource('productos', 'ProductosController');
 });
